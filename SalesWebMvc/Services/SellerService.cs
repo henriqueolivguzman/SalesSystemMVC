@@ -38,7 +38,7 @@ namespace SalesWebMvc.Services
         }
         public async Task UpdateAsync(Seller obj)
         {
-            bool hasAny= await _context.Seller.AnyAsync(x => x.Id == obj.Id)
+            bool hasAny = await _context.Seller.AnyAsync(x => x.Id == obj.Id);
             if (!hasAny) 
             {
                 throw new NotFoundException("Id not found");
