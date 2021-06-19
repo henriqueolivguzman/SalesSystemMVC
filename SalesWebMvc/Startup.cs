@@ -46,12 +46,13 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
             services.AddScoped<DepartmentService>();
+            services.AddScoped<SalesRecordService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingservice)
         {
-            var enUS = new CultureInfo("en US");
+            var enUS = new CultureInfo("US");
             var localizationOptions = new RequestLocalizationOptions { DefaultRequestCulture = new RequestCulture(enUS),
                                                                       SupportedCultures = new List<CultureInfo> { enUS },
                                                                       SupportedUICultures = new List<CultureInfo> { enUS},
